@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Portfolio Overview</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,71 +14,25 @@
   </nav>
 
   <main>
-    <section id="portfolio">
-      <h2>Portfolio</h2>
-      <p>Here you can explore the different types of work I do.</p>
+    <h2>Portfolio</h2>
+    <p>Click a category to explore my work:</p>
 
-      <label for="portfolio-select">Select Portfolio Type:</label>
-      <select id="portfolio-select">
-        <option value="">--Choose an option--</option>
-        <option value="photo">Photo Portfolio</option>
-        <option value="gis">GIS Portfolio</option>
-        <option value="other">Other Projects</option>
-      </select>
-
-      <!-- Photo Portfolio -->
-      <div id="photo" class="project-category">
+    <div class="portfolio-blocks">
+      <a href="photo.html" class="portfolio-block">
         <h3>Photo Portfolio</h3>
-        <p>These are examples of my photography work, showcasing landscapes, wildlife, and conservation projects.</p>
-        <div class="gallery">
-          <img src="images/photo1.jpg" alt="Photo 1">
-          <img src="images/photo2.jpg" alt="Photo 2">
-          <img src="images/photo3.jpg" alt="Photo 3">
-        </div>
-      </div>
+        <p>Wildlife, landscapes, and conservation photography.</p>
+      </a>
 
-      <!-- GIS Portfolio -->
-      <div id="gis" class="project-category">
+      <a href="gis.html" class="portfolio-block">
         <h3>GIS Portfolio</h3>
-        <p>Examples of my GIS and mapping projects, including spatial analysis, land-use planning, and conservation mapping.</p>
-        <div class="gis-projects">
-          <div class="project">
-            <h4>Mapping Elephants</h4>
-            <p>Spatial analysis of elephant movement patterns.</p>
-          </div>
-          <div class="project">
-            <h4>Land-use Planning</h4>
-            <p>Identifying suitable areas for conservation and development.</p>
-          </div>
-        </div>
-      </div>
+        <p>Mapping, spatial analysis, and land-use projects.</p>
+      </a>
 
-      <!-- Other Projects -->
-      <div id="other" class="project-category">
+      <a href="other.html" class="portfolio-block">
         <h3>Other Projects</h3>
-        <p>Miscellaneous projects, including community engagement, environmental research, and collaborations.</p>
-        <ul>
-          <li>Community conservation workshop materials</li>
-          <li>Research on human-wildlife conflict</li>
-          <li>Educational outreach programs</li>
-        </ul>
-      </div>
-    </section>
+        <p>Community engagement, research, and miscellaneous work.</p>
+      </a>
+    </div>
   </main>
-
-  <script>
-    const select = document.getElementById('portfolio-select');
-    const sections = document.querySelectorAll('.project-category');
-
-    select.addEventListener('change', () => {
-      sections.forEach(section => {
-        if (section.id === select.value) {
-          section.style.display = 'block';
-        } else {
-          section.style.display = 'none';
-        }
-      });
-    });
-  </script>
 </body>
 </html>
