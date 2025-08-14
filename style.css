@@ -1,175 +1,128 @@
-/* ===== Global Styles ===== */
-body {
-  font-family: Arial, sans-serif;
+/* ===== GENERAL RESET ===== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: #f5f5f5;
   color: #333;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-h1, h2, h3, h4 {
-  margin-top: 0;
-}
-
-/* ===== Navigation Bar (ribbon) ===== */
+/* ===== NAVIGATION RIBBON ===== */
 nav {
   background-color: #004466;
   padding: 1rem 2rem;
   display: flex;
-  gap: 2rem;
   justify-content: center;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 nav a {
   color: #fff;
+  text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #ffcc00;
 }
 
-/* ===== Main Container / Sections ===== */
-main, section {
+/* ===== MAIN CONTENT ===== */
+main {
   padding: 2rem;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* ===== About Section ===== */
+h1, h2, h3 {
+  color: #004466;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ===== ABOUT PAGE ===== */
 .about-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
-  margin-top: 1rem;
-}
-
-.about-container img {
-  width: 150px;
-  border-radius: 50%;
-}
-
-/* ===== Portfolio Overview Page ===== */
-.portfolio-blocks {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
-.portfolio-block {
-  background-color: #004466;
-  color: #fff;
-  padding: 2rem 1rem;
+.about-container img {
+  max-width: 250px;
   border-radius: 10px;
+}
+
+/* ===== PORTFOLIO BLOCKS ===== */
+.portfolio-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.portfolio-block {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
   text-align: center;
   text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 250px;
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-block:hover {
-  background-color: #006699;
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.portfolio-block h3 {
-  margin-bottom: 0.5rem;
-}
-
-.portfolio-block p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  margin-top: 0.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .block-icon {
-  width: 50px;
-  height: 50px;
-  margin: 0.5rem 0;
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
-/* ===== Portfolio Pages (Photo, GIS, Other) ===== */
-.project-category {
-  margin-top: 1rem;
-}
-
-/* ===== Photo Gallery ===== */
+/* ===== GALLERY ===== */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .gallery img {
-  width: 200px;
-  height: auto;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
 }
 
-/* ===== GIS Projects ===== */
-.gis-projects .project {
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fafafa;
-}
-
-/* ===== Other Projects List ===== */
-ul {
-  padding-left: 1.5rem;
-}
-
-/* ===== Footer ===== */
+/* ===== FOOTER ===== */
 footer {
   background-color: #004466;
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .gallery {
-    justify-content: center;
-  }
-
-  nav {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .portfolio-blocks {
-    flex-direction: column;
-    align-items: center;
-  }
 }
