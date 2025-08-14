@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo Portfolio</title>
+  <title>Photo Portfolio - Jonathan Benjamin</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Top navigation ribbon -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Me</a>
@@ -14,14 +16,36 @@
   </nav>
 
   <main>
-    <h2>Photo Portfolio</h2>
-    <p>Click an image to view the full version.</p>
+    <h1>Photo Portfolio</h1>
+    <p>Click a cover image to view the full photo gallery for each category.</p>
 
-    <div class="gallery">
-      <img src="images/image-portfolio/photo1.jpg" alt="Photo 1">
-      <img src="images/image-portfolio/photo2.jpg" alt="Photo 2">
-      <img src="images/image-portfolio/photo3.jpg" alt="Photo 3">
+    <div class="portfolio-blocks">
+      <!-- Problem Elephant -->
+      <a href="photo-problem-elephant.html" class="portfolio-block">
+        <h3>Problem Elephant Control</h3>
+        <img src="images/photo-portfolio/problem-elephant.jpg" alt="Problem Elephant Cover" class="block-icon">
+        <p>Photos documenting problem elephant management and conservation efforts.</p>
+      </a>
+
+      <!-- Landscapes -->
+      <a href="photo-landscapes.html" class="portfolio-block">
+        <h3>Landscapes</h3>
+        <img src="images/photo-portfolio/landscapes.jpg" alt="Landscapes Cover" class="block-icon">
+        <p>Beautiful wildlife and habitat landscapes.</p>
+      </a>
+
+      <!-- Community -->
+      <a href="photo-community.html" class="portfolio-block">
+        <h3>Community Projects</h3>
+        <img src="images/photo-portfolio/community.jpg" alt="Community Cover" class="block-icon">
+        <p>Conservation engagement with local communities.</p>
+      </a>
     </div>
   </main>
+
+  <footer>
+    <p>© 2025 Jonathan Benjamin</p>
+  </footer>
+
 </body>
 </html>
