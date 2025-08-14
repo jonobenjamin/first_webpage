@@ -3,56 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Jonathan Benjamin</title>
+  <title>Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Portfolio</a>
+  </nav>
 
-  <!-- HEADER / NAV -->
-  <header>
-    <h1>Jonathan Benjamin</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-      </ul>
-    </nav>
-  </header>
+  <main>
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <p>Here you can explore the different types of work I do.</p>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <p>Here you can explore the different types of work I do, including GIS projects, photography, and other initiatives.</p>
+      <label for="portfolio-select">Select Portfolio Type:</label>
+      <select id="portfolio-select">
+        <option value="">--Choose an option--</option>
+        <option value="photo">Photo Portfolio</option>
+        <option value="gis">GIS Portfolio</option>
+        <option value="other">Other Projects</option>
+      </select>
 
-    <div class="dropdown">
-      <button class="dropbtn">Select Portfolio Type</button>
-      <div class="dropdown-content">
-        <a href="#photo">Photo Portfolio</a>
-        <a href="#gis">GIS Portfolio</a>
-        <a href="#other">Other Projects</a>
+      <!-- Photo Portfolio -->
+      <div id="photo" class="project-category">
+        <h3>Photo Portfolio</h3>
+        <p>These are examples of my photography work, showcasing landscapes, wildlife, and conservation projects.</p>
+        <div class="gallery">
+          <img src="images/photo1.jpg" alt="Photo 1">
+          <img src="images/photo2.jpg" alt="Photo 2">
+          <img src="images/photo3.jpg" alt="Photo 3">
+        </div>
       </div>
-    </div>
 
-    <!-- Subsections -->
-    <div id="photo" class="project-category">
-      <h3>Photo Portfolio</h3>
-      <p>My photography work.</p>
-    </div>
+      <!-- GIS Portfolio -->
+      <div id="gis" class="project-category">
+        <h3>GIS Portfolio</h3>
+        <p>Examples of my GIS and mapping projects, including spatial analysis, land-use planning, and conservation mapping.</p>
+        <div class="gis-projects">
+          <div class="project">
+            <h4>Mapping Elephants</h4>
+            <p>Spatial analysis of elephant movement patterns.</p>
+          </div>
+          <div class="project">
+            <h4>Land-use Planning</h4>
+            <p>Identifying suitable areas for conservation and development.</p>
+          </div>
+        </div>
+      </div>
 
-    <div id="gis" class="project-category">
-      <h3>GIS Portfolio</h3>
-      <p>Mapping and spatial analysis projects.</p>
-    </div>
+      <!-- Other Projects -->
+      <div id="other" class="project-category">
+        <h3>Other Projects</h3>
+        <p>Miscellaneous projects, including community engagement, environmental research, and collaborations.</p>
+        <ul>
+          <li>Community conservation workshop materials</li>
+          <li>Research on human-wildlife conflict</li>
+          <li>Educational outreach programs</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-    <div id="other" class="project-category">
-      <h3>Other Projects</h3>
-      <p>Miscellaneous projects and initiatives.</p>
-    </div>
-  </section>
+  <script>
+    const select = document.getElementById('portfolio-select');
+    const sections = document.querySelectorAll('.project-category');
 
-  <footer>
-    <p>© 2025 Jonathan Benjamin</p>
-  </footer>
-
+    select.addEventListener('change', () => {
+      sections.forEach(section => {
+        if (section.id === select.value) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
