@@ -44,11 +44,11 @@ nav a:hover {
   background: #666;
 }
 
-/* ===== PAGE SECTIONS ===== */
-section {
-  padding: 2rem;
+/* ===== MAIN CONTENT SECTIONS ===== */
+main {
   max-width: 1100px;
   margin: auto;
+  padding: 2rem;
 }
 
 /* ===== ABOUT PAGE ===== */
@@ -62,6 +62,8 @@ section {
 
 .about-container img {
   max-width: 250px;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
 }
 
@@ -70,8 +72,8 @@ section {
   min-width: 250px;
 }
 
-/* ===== PORTFOLIO PAGE ===== */
-.portfolio-grid {
+/* ===== PORTFOLIO BLOCKS (Home, Portfolio, Photo pages) ===== */
+.portfolio-blocks {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -79,23 +81,28 @@ section {
   margin-top: 2rem;
 }
 
-.portfolio-item {
+.portfolio-block {
   background: white;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   width: 250px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.portfolio-item:hover {
+.portfolio-block:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.portfolio-item img {
-  max-width: 100%;
+.portfolio-block img.block-icon {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
@@ -109,6 +116,7 @@ section {
 
 .gallery img {
   width: 100%;
+  height: auto;
   border-radius: 8px;
   transition: transform 0.3s;
 }
