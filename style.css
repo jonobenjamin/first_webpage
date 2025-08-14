@@ -17,17 +17,9 @@ h1, h2, h3, h4 {
   margin-top: 0;
 }
 
-/* ===== Header ===== */
-header {
-  background-color: #004466;
-  color: #fff;
-  padding: 1rem 2rem;
-  text-align: center;
-}
-
-/* ===== Navigation Bar ===== */
+/* ===== Navigation Bar (ribbon) ===== */
 nav {
-  background-color: #006699;
+  background-color: #004466;
   padding: 1rem 2rem;
   display: flex;
   gap: 2rem;
