@@ -10,7 +10,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: inherit;
 }
 
 h1, h2, h3, h4 {
@@ -60,26 +60,35 @@ main {
 
 /* ===== Portfolio Overview Page ===== */
 .portfolio-blocks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .portfolio-block {
-  flex: 1 1 250px;
   background-color: #004466;
   color: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
+  padding: 2rem 1rem;
+  border-radius: 10px;
   text-align: center;
   text-decoration: none;
-  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
 .portfolio-block:hover {
   background-color: #006699;
   transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.portfolio-block .block-content h3 {
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-block .block-content p {
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 /* ===== Portfolio Pages (Photo, GIS, Other) ===== */
@@ -150,7 +159,7 @@ select {
     gap: 1rem;
   }
 
-  .portfolio-block {
-    flex: 1 1 100%;
+  .portfolio-blocks {
+    grid-template-columns: 1fr;
   }
 }
