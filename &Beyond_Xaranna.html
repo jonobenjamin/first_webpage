@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Xaranna Photo Album</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f4f4f4;
       margin: 0;
       padding: 20px;
-      background: #f7f7f7;
     }
     h1 {
       text-align: center;
@@ -18,62 +18,19 @@
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 15px;
+      grid-gap: 10px;
     }
-    .gallery a img {
+    .gallery img {
       width: 100%;
       height: auto;
-      object-fit: contain; /* ensures no cropping */
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      transition: transform 0.2s ease;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
     }
-    .gallery a img:hover {
+    .gallery img:hover {
       transform: scale(1.05);
     }
-  </style>
-</head>
-<body>
-  <h1>Xaranna Album</h1>
-  <div class="gallery">
-    <!-- Thumbnails linking to full-size images -->
-    <a href="images/photo-portfolio/Xaranna/img1.jpg"><img src="images/photo-portfolio/Xaranna/img1.jpg" alt="Xaranna Photo 1"></a>
-    <a href="images/photo-portfolio/Xaranna/img2.jpg"><img src="images/photo-portfolio/Xaranna/img2.jpg" alt="Xaranna Photo 2"></a>
-    <a href="images/photo-portfolio/Xaranna/img3.jpg"><img src="images/photo-portfolio/Xaranna/img3.jpg" alt="Xaranna Photo 3"></a>
-    <a href="images/photo-portfolio/Xaranna/img4.jpg"><img src="images/photo-portfolio/Xaranna/img4.jpg" alt="Xaranna Photo 4"></a>
-    <a href="images/photo-portfolio/Xaranna/img5.jpg"><img src="images/photo-portfolio/Xaranna/img5.jpg" alt="Xaranna Photo 5"></a>
-    <a href="images/photo-portfolio/Xaranna/img6.jpg"><img src="images/photo-portfolio/Xaranna/img6.jpg" alt="Xaranna Photo 6"></a>
-    <a href="images/photo-portfolio/Xaranna/img7.jpg"><img src="images/photo-portfolio/Xaranna/img7.jpg" alt="Xaranna Photo 7"></a>
-    <a href="images/photo-portfolio/Xaranna/img8.jpg"><img src="images/photo-portfolio/Xaranna/img8.jpg" alt="Xaranna Photo 8"></a>
-    <a href="images/photo-portfolio/Xaranna/img9.jpg"><img src="images/photo-portfolio/Xaranna/img9.jpg" alt="Xaranna Photo 9"></a>
-    <a href="images/photo-portfolio/Xaranna/img10.jpg"><img src="images/photo-portfolio/Xaranna/img10.jpg" alt="Xaranna Photo 10"></a>
-    <a href="images/photo-portfolio/Xaranna/img11.jpg"><img src="images/photo-portfolio/Xaranna/img11.jpg" alt="Xaranna Photo 11"></a>
-    <a href="images/photo-portfolio/Xaranna/img12.jpg"><img src="images/photo-portfolio/Xaranna/img12.jpg" alt="Xaranna Photo 12"></a>
-    <a href="images/photo-portfolio/Xaranna/img13.jpg"><img src="images/photo-portfolio/Xaranna/img13.jpg" alt="Xaranna Photo 13"></a>
-    <a href="images/photo-portfolio/Xaranna/img14.jpg"><img src="images/photo-portfolio/Xaranna/img14.jpg" alt="Xaranna Photo 14"></a>
-    <a href="images/photo-portfolio/Xaranna/img15.jpg"><img src="images/photo-portfolio/Xaranna/img15.jpg" alt="Xaranna Photo 15"></a>
-    <a href="images/photo-portfolio/Xaranna/img16.jpg"><img src="images/photo-portfolio/Xaranna/img16.jpg" alt="Xaranna Photo 16"></a>
-    <a href="images/photo-portfolio/Xaranna/img17.jpg"><img src="images/photo-portfolio/Xaranna/img17.jpg" alt="Xaranna Photo 17"></a>
-    <a href="images/photo-portfolio/Xaranna/img18.jpg"><img src="images/photo-portfolio/Xaranna/img18.jpg" alt="Xaranna Photo 18"></a>
-    <a href="images/photo-portfolio/Xaranna/img19.jpg"><img src="images/photo-portfolio/Xaranna/img19.jpg" alt="Xaranna Photo 19"></a>
-    <a href="images/photo-portfolio/Xaranna/img20.jpg"><img src="images/photo-portfolio/Xaranna/img20.jpg" alt="Xaranna Photo 20"></a>
-    <a href="images/photo-portfolio/Xaranna/img21.jpg"><img src="images/photo-portfolio/Xaranna/img21.jpg" alt="Xaranna Photo 21"></a>
-    <a href="images/photo-portfolio/Xaranna/img22.jpg"><img src="images/photo-portfolio/Xaranna/img22.jpg" alt="Xaranna Photo 22"></a>
-    <a href="images/photo-portfolio/Xaranna/img23.jpg"><img src="images/photo-portfolio/Xaranna/img23.jpg" alt="Xaranna Photo 23"></a>
-    <a href="images/photo-portfolio/Xaranna/img24.jpg"><img src="images/photo-portfolio/Xaranna/img24.jpg" alt="Xaranna Photo 24"></a>
-    <a href="images/photo-portfolio/Xaranna/img25.jpg"><img src="images/photo-portfolio/Xaranna/img25.jpg" alt="Xaranna Photo 25"></a>
-    <a href="images/photo-portfolio/Xaranna/img26.jpg"><img src="images/photo-portfolio/Xaranna/img26.jpg" alt="Xaranna Photo 26"></a>
-    <a href="images/photo-portfolio/Xaranna/img27.jpg"><img src="images/photo-portfolio/Xaranna/img27.jpg" alt="Xaranna Photo 27"></a>
-    <a href="images/photo-portfolio/Xaranna/img28.jpg"><img src="images/photo-portfolio/Xaranna/img28.jpg" alt="Xaranna Photo 28"></a>
-    <a href="images/photo-portfolio/Xaranna/img29.jpg"><img src="images/photo-portfolio/Xaranna/img29.jpg" alt="Xaranna Photo 29"></a>
-    <a href="images/photo-portfolio/Xaranna/img30.jpg"><img src="images/photo-portfolio/Xaranna/img30.jpg" alt="Xaranna Photo 30"></a>
-    <a href="images/photo-portfolio/Xaranna/img31.jpg"><img src="images/photo-portfolio/Xaranna/img31.jpg" alt="Xaranna Photo 31"></a>
-    <a href="images/photo-portfolio/Xaranna/img32.jpg"><img src="images/photo-portfolio/Xaranna/img32.jpg" alt="Xaranna Photo 32"></a>
-    <a href="images/photo-portfolio/Xaranna/img33.jpg"><img src="images/photo-portfolio/Xaranna/img33.jpg" alt="Xaranna Photo 33"></a>
-    <a href="images/photo-portfolio/Xaranna/img34.jpg"><img src="images/photo-portfolio/Xaranna/img34.jpg" alt="Xaranna Photo 34"></a>
-    <a href="images/photo-portfolio/Xaranna/img35.jpg"><img src="images/photo-portfolio/Xaranna/img35.jpg" alt="Xaranna Photo 35"></a>
-    <a href="images/photo-portfolio/Xaranna/img36.jpg"><img src="images/photo-portfolio/Xaranna/img36.jpg" alt="Xaranna Photo 36"></a>
-    <a href="images/photo-portfolio/Xaranna/img37.jpg"><img src="images/photo-portfolio/Xaranna/img37.jpg" alt="Xaranna Photo 37"></a>
-  </div>
-</body>
-</html>
+
+    /* Lightbox styling */
+    .
