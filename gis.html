@@ -3,70 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GIS Portfolio</title>
+  <title>GIS Portfolio - Jono Benjamin</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Thumbnail grid */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .portfolio-item {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .portfolio-item h3 {
-      margin: 12px;
-      font-size: 1.2rem;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
-  <header>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gis.html" class="active">GIS</a></li>
+      <li><a href="remote_sensing.html">Remote Sensing</a></li>
+      <li><a href="mapping.html">Mapping</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
     <h1>GIS Portfolio</h1>
+    <p>Examples of my GIS work, projects, and analyses.</p>
   </header>
 
-  <main>
-    <div class="portfolio-grid">
-      <!-- Strava Dashboard -->
-      <a href="https://jonobenjamin.github.io/Strava/index.html" class="portfolio-item" target="_blank">
-        <img src="thumbnails/strava_index.png" alt="Strava Dashboard Thumbnail">
-        <h3>Strava Dashboard</h3>
+  <!-- Portfolio Grid -->
+  <main class="portfolio-grid">
+    <div class="portfolio-item">
+      <a href="gis_project1.html">
+        <img src="images/gis_project1_thumb.jpg" alt="GIS Project 1 Thumbnail">
+        <h3>Spatial Analysis Project</h3>
       </a>
+    </div>
 
-      <!-- Strava Scratch Map -->
-      <a href="https://jonobenjamin.github.io/Strava/scratchmap.html" class="portfolio-item" target="_blank">
-        <img src="thumbnails/strava_map.png" alt="Strava Scratch Map Thumbnail">
-        <h3>Strava Scratch Map</h3>
+    <div class="portfolio-item">
+      <a href="gis_project2.html">
+        <img src="images/gis_project2_thumb.jpg" alt="GIS Project 2 Thumbnail">
+        <h3>Land Use Change</h3>
       </a>
+    </div>
 
-      <!-- More projects can be added here -->
-      <!--
-      <a href="your-link.html" class="portfolio-item" target="_blank">
-        <img src="thumbnails/your-thumbnail.png" alt="Project Thumbnail">
-        <h3>Project Name</h3>
+    <div class="portfolio-item">
+      <a href="gis_project3.html">
+        <img src="images/gis_project3_thumb.jpg" alt="GIS Project 3 Thumbnail">
+        <h3>Waterbody Mapping</h3>
       </a>
-      -->
+    </div>
+
+    <div class="portfolio-item">
+      <a href="gis_project4.html">
+        <img src="images/gis_project4_thumb.jpg" alt="GIS Project 4 Thumbnail">
+        <h3>Suitability Modeling</h3>
+      </a>
     </div>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jono Benjamin. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
