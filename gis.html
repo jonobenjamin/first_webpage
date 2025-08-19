@@ -1,88 +1,72 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GIS Portfolio</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    .gallery {
+    /* Thumbnail grid */
+    .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 20px;
     }
 
-    .card {
+    .portfolio-item {
       background: #fff;
       border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease-in-out;
-      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .card:hover {
-      transform: scale(1.05);
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
 
-    .card img {
+    .portfolio-item img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
-      display: block;
     }
 
-    .card h2 {
-      margin: 10px 0;
-      font-size: 1.2em;
-      color: #333;
-    }
-
-    .card a {
-      text-decoration: none;
-      color: inherit;
+    .portfolio-item h3 {
+      margin: 12px;
+      font-size: 1.2rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>GIS Portfolio</h1>
-    <p>Interactive projects and visualizations</p>
   </header>
 
-  <section class="gallery">
-    <div class="card">
-      <a href="https://jonobenjamin.github.io/Strava/index.html" target="_blank">
-        <img src="thumbnails/index.png" alt="Strava Map Overview Thumbnail">
-        <h2>Strava Map Overview</h2>
+  <main>
+    <div class="portfolio-grid">
+      <!-- Strava Dashboard -->
+      <a href="https://jonobenjamin.github.io/Strava/index.html" class="portfolio-item" target="_blank">
+        <img src="thumbnails/strava_index.png" alt="Strava Dashboard Thumbnail">
+        <h3>Strava Dashboard</h3>
       </a>
-    </div>
 
-    <div class="card">
-      <a href="https://jonobenjamin.github.io/Strava/scratchmap.html" target="_blank">
-        <img src="thumbnails/scratchmap.png" alt="Strava Scratch Map Thumbnail">
-        <h2>Strava Scratch Map</h2>
+      <!-- Strava Scratch Map -->
+      <a href="https://jonobenjamin.github.io/Strava/scratchmap.html" class="portfolio-item" target="_blank">
+        <img src="thumbnails/strava_map.png" alt="Strava Scratch Map Thumbnail">
+        <h3>Strava Scratch Map</h3>
       </a>
+
+      <!-- More projects can be added here -->
+      <!--
+      <a href="your-link.html" class="portfolio-item" target="_blank">
+        <img src="thumbnails/your-thumbnail.png" alt="Project Thumbnail">
+        <h3>Project Name</h3>
+      </a>
+      -->
     </div>
-  </section>
+  </main>
 </body>
 </html>
