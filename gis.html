@@ -5,123 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GIS Portfolio - Jono Benjamin</title>
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Top navigation ribbon */
-    nav {
-      background: #333;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      padding: 5px 10px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      background-color: #555;
-      border-radius: 5px;
-    }
-
-    .portfolio-header {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-    .portfolio-item {
-      margin-bottom: 40px;
-    }
-    .portfolio-item h3 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    /* Maps layout */
-    .maps-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto 40px;
-    }
-
-    .map-half {
-      flex: 1 1 48%;        /* half page width */
-      width: 48%;
-      height: 400px;        /* fixed height to make landscape visible */
-      min-height: 350px;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f2f2f2;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 900px) {
-      .map-half {
-        flex: 1 1 100%;
-        width: 100%;
-        height: 300px; /* smaller height for narrow screens */
-      }
-    }
-  </style>
 </head>
 <body>
-
   <!-- Top navigation ribbon -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Me</a>
     <a href="portfolio.html">Portfolio</a>
   </nav>
-
-  <!-- Page Header -->
-  <header class="portfolio-header">
-    <h1>GIS Portfolio</h1>
-    <p>Interactive maps powered by live data from my GitHub repository.</p>
-  </header>
-
-  <!-- Maps Section -->
-  <main class="portfolio-grid">
-
-    <!-- First Row: two maps side by side -->
-    <div class="maps-row">
-      <div class="portfolio-item">
-        <h3>Scratch Map</h3>
-        <iframe class="map-half" src="https://jonobenjamin.github.io/Strava/scratchmap.html" frameborder="0"></iframe>
+  
+  <!-- Main content -->
+  <main>
+    <!-- Page Header -->
+    <header class="portfolio-header">
+      <h1>GIS Portfolio</h1>
+      <p>Interactive maps powered by live data from my GitHub repository.</p>
+    </header>
+    
+    <!-- Maps Section -->
+    <div class="portfolio-container">
+      <!-- First Row: Scratch Map and Strava Heatmap -->
+      <div class="maps-row">
+        <div class="portfolio-item">
+          <h3>Scratch Map</h3>
+          <iframe class="map-iframe" src="https://jonobenjamin.github.io/Strava/scratchmap.html" frameborder="0"></iframe>
+        </div>
+        <div class="portfolio-item">
+          <h3>Strava Heatmap</h3>
+          <iframe class="map-iframe" src="https://jonobenjamin.github.io/Strava/index.html" frameborder="0"></iframe>
+        </div>
       </div>
-      <div class="portfolio-item">
-        <h3>Strava Heatmap</h3>
-        <iframe class="map-half" src="https://jonobenjamin.github.io/Strava/index.html" frameborder="0"></iframe>
+      
+      <!-- Second Row: Travel Map and placeholder -->
+      <div class="maps-row">
+        <div class="portfolio-item">
+          <h3>Travel Map</h3>
+          <iframe class="map-iframe" src="https://jonobenjamin.github.io/Strava/all_data.html" frameborder="0"></iframe>
+        </div>
+        <div class="portfolio-item">
+          <h3>Additional Map</h3>
+          <div class="map-placeholder">
+            <p>Map coming soon...</p>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Second Row: single map -->
-    <div class="maps-row">
-      <div class="portfolio-item">
-        <h3>Travel Map</h3>
-        <iframe class="map-half" src="https://jonobenjamin.github.io/Strava/all_data.html" frameborder="0"></iframe>
-      </div>
-    </div>
-
   </main>
-
+  
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Jono Benjamin. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
