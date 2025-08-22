@@ -182,32 +182,12 @@ nav a:focus-visible {
    GIS PORTFOLIO - LIVE MAPS LAYOUT
    Two maps per row, just under half page width each
 ========================= */
-.portfolio-header {
-  text-align: center;
-  padding: 2rem 1rem 1rem;
-  background: #fff;
-  margin: -2rem -1rem 2rem -1rem;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
 
-.portfolio-header h1 {
-  color: #333;
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.portfolio-header p {
-  color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 0;
-}
-
-/* Container for map rows */
+/* Container for map rows - inherits from main styling */
 .portfolio-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 /* Row layout - two maps per row */
@@ -374,7 +354,7 @@ footer {
   }
   
   .portfolio-container {
-    padding: 0 0.5rem;
+    padding: 0;
   }
 }
 
@@ -387,19 +367,6 @@ footer {
 
   .portfolio-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .portfolio-header {
-    margin: -1.25rem -1.25rem 1.5rem -1.25rem;
-    padding: 1.5rem 1rem 1rem;
-  }
-  
-  .portfolio-header h1 {
-    font-size: 1.8rem;
-  }
-  
-  .portfolio-header p {
-    font-size: 1rem;
   }
 }
 
@@ -424,10 +391,6 @@ footer {
   .maps-row .portfolio-item h3 {
     padding: 0.75rem;
     font-size: 1.1rem;
-  }
-  
-  .portfolio-header h1 {
-    font-size: 1.6rem;
   }
   
   .map-placeholder {
