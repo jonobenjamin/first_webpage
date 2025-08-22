@@ -5,8 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GIS Portfolio - Jono Benjamin</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    .map-container {
+      width: 100%;
+      height: 600px;
+      margin-bottom: 40px;
+    }
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  </style>
 </head>
 <body>
+
   <!-- Navigation -->
   <nav>
     <ul>
@@ -19,45 +36,57 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="page-header">
+  <header class="portfolio-header">
     <h1>GIS Portfolio</h1>
-    <p>Examples of my GIS work, projects, and analyses.</p>
+    <p>Interactive maps powered by live data from my GitHub repository.</p>
   </header>
 
-  <!-- Portfolio Grid -->
+  <!-- Maps Section -->
   <main class="portfolio-grid">
+
+    <!-- Scratch Map -->
     <div class="portfolio-item">
-      <a href="gis_project1.html">
-        <img src="images/gis_project1_thumb.jpg" alt="GIS Project 1 Thumbnail">
-        <h3>Spatial Analysis Project</h3>
-      </a>
+      <h3>Scratch Map</h3>
+      <div id="scratchmap" class="map-container"></div>
     </div>
 
+    <!-- Strava Heatmap -->
     <div class="portfolio-item">
-      <a href="gis_project2.html">
-        <img src="images/gis_project2_thumb.jpg" alt="GIS Project 2 Thumbnail">
-        <h3>Land Use Change</h3>
-      </a>
+      <h3>Strava Heatmap</h3>
+      <div id="stravaheatmap" class="map-container"></div>
     </div>
 
+    <!-- Travel Map -->
     <div class="portfolio-item">
-      <a href="gis_project3.html">
-        <img src="images/gis_project3_thumb.jpg" alt="GIS Project 3 Thumbnail">
-        <h3>Waterbody Mapping</h3>
-      </a>
+      <h3>Travel Map</h3>
+      <div id="travelmap" class="map-container"></div>
     </div>
 
-    <div class="portfolio-item">
-      <a href="gis_project4.html">
-        <img src="images/gis_project4_thumb.jpg" alt="GIS Project 4 Thumbnail">
-        <h3>Suitability Modeling</h3>
-      </a>
-    </div>
   </main>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Jono Benjamin. All Rights Reserved.</p>
   </footer>
+
+  <!-- Map Scripts -->
+  <script>
+    // Helper function to embed maps via iframe from your GitHub Pages
+    function embedMap(containerId, url) {
+      var container = document.getElementById(containerId);
+      var iframe = document.createElement('iframe');
+      iframe.src = url;
+      iframe.width = "100%";
+      iframe.height = "600";
+      iframe.style.border = "none";
+      container.appendChild(iframe);
+    }
+
+    // Embed maps from GitHub Pages
+    embedMap('scratchmap', 'https://jonobenjamin.github.io/Strava/scratchmap.html');
+    embedMap('stravaheatmap', 'https://jonobenjamin.github.io/Strava/index.html');
+    embedMap('travelmap', 'https://jonobenjamin.github.io/Strava/all_data.html');
+  </script>
+
 </body>
 </html>
