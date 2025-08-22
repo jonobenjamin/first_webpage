@@ -11,14 +11,55 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <style>
-    .map-container {
-      width: 100%;
-      height: 600px;
-      margin-bottom: 40px;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 10px;
+      margin: 0;
+      display: flex;
+      background: #333;
+    }
+    nav ul li {
+      margin-right: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+    nav ul li a.active {
+      background-color: #555;
+      border-radius: 5px;
     }
     .portfolio-header {
       text-align: center;
-      margin-bottom: 40px;
+      padding: 40px 20px 20px;
+    }
+    .portfolio-item {
+      margin: 40px auto;
+      width: 90%;
+      max-width: 1200px;
+    }
+    .portfolio-item h3 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .map-container {
+      width: 100%;
+      height: 600px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f2f2f2;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -47,19 +88,25 @@
     <!-- Scratch Map -->
     <div class="portfolio-item">
       <h3>Scratch Map</h3>
-      <div id="scratchmap" class="map-container"></div>
+      <a href="https://jonobenjamin.github.io/Strava/scratchmap.html" target="_blank">
+        <div id="scratchmap" class="map-container"></div>
+      </a>
     </div>
 
     <!-- Strava Heatmap -->
     <div class="portfolio-item">
       <h3>Strava Heatmap</h3>
-      <div id="stravaheatmap" class="map-container"></div>
+      <a href="https://jonobenjamin.github.io/Strava/index.html" target="_blank">
+        <div id="stravaheatmap" class="map-container"></div>
+      </a>
     </div>
 
     <!-- Travel Map -->
     <div class="portfolio-item">
       <h3>Travel Map</h3>
-      <div id="travelmap" class="map-container"></div>
+      <a href="https://jonobenjamin.github.io/Strava/all_data.html" target="_blank">
+        <div id="travelmap" class="map-container"></div>
+      </a>
     </div>
 
   </main>
@@ -71,21 +118,31 @@
 
   <!-- Map Scripts -->
   <script>
-    // Helper function to embed maps via iframe from your GitHub Pages
-    function embedMap(containerId, url) {
+    // Function to embed Leaflet maps with remote GeoJSON data
+    function embedMap(containerId, geojsonURL) {
       var container = document.getElementById(containerId);
-      var iframe = document.createElement('iframe');
-      iframe.src = url;
-      iframe.width = "100%";
-      iframe.height = "600";
-      iframe.style.border = "none";
-      container.appendChild(iframe);
+      var map = L.map(container).setView([0,0], 2);
+
+      // Add base tile layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+
+      // Load GeoJSON from your GitHub repository
+      fetch(geojsonURL)
+        .then(res => res.json())
+        .then(data => {
+          var layer = L.geoJSON(data).addTo(map);
+          map.fitBounds(layer.getBounds());
+        })
+        .catch(err => console.error('Error loading GeoJSON:', err));
     }
 
-    // Embed maps from GitHub Pages
-    embedMap('scratchmap', 'https://jonobenjamin.github.io/Strava/scratchmap.html');
-    embedMap('stravaheatmap', 'https://jonobenjamin.github.io/Strava/index.html');
-    embedMap('travelmap', 'https://jonobenjamin.github.io/Strava/all_data.html');
+    // Initialize maps with raw GitHub URLs to GeoJSON data
+    embedMap('scratchmap', 'https://raw.githubusercontent.com/jonobenjamin/Strava/main/scratchmap_data.geojson');
+    embedMap('stravaheatmap', 'https://raw.githubusercontent.com/jonobenjamin/Strava/main/strava_data.geojson');
+    embedMap('travelmap', 'https://raw.githubusercontent.com/jonobenjamin/Strava/main/all_data.geojson');
   </script>
 
 </body>
